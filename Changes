@@ -1,0 +1,9 @@
+Revision history for Perl extension Attribute::Util.
+
+0.02  Wed May 30 22:37:56 2001
+	- added documentation, tests
+
+0.01  Wed May 30 16:23:09 2001
+	- original version; created by h2xs 1.20 with options
+		-XAn Attribute::Util
+
