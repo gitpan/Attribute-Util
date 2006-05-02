@@ -1,5 +1,15 @@
-Revision history for Perl extension Attribute::Util.
+# Revision history for Perl extension Attribute::Util.
+#
+# $Id: Changes,v 1.1 2006/05/02 15:33:22 dankogai Exp dankogai $
+#
+$Revision: 1.1 $ $Date: 2006/05/02 15:33:22 $
+lib/Attribute/*.pm
+  Oops.  MARCEL, not MERCEL.
 
+1.00  2006/05/02 14:52:40
+* *
+  Refactored by dankogai
+	
 0.02  Wed May 30 22:37:56 2001
 	- added documentation, tests
 
