@@ -5,7 +5,7 @@ use strict;
 use Attribute::Handlers;
 use Carp ();
 
-our $VERSION = sprintf "%d.%02d", q$Revision: 1.1 $ =~ /(\d+)/g;
+our $VERSION = sprintf "%d.%02d", q$Revision: 1.2 $ =~ /(\d+)/g;
 our @DEFAULT_ATTRIBUTES = qw(Abstract Alias Memoize SigHandler);
 
 sub import{

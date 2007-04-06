@@ -1,9 +1,13 @@
 # Revision history for Perl extension Attribute::Util.
 #
-# $Id: Changes,v 1.1 2006/05/02 15:33:22 dankogai Exp dankogai $
+# $Id: Changes,v 1.2 2007/04/06 12:10:14 dankogai Exp dankogai $
 #
-$Revision: 1.1 $ $Date: 2006/05/02 15:33:22 $
-lib/Attribute/*.pm
+$Revision: 1.2 $ $Date: 2007/04/06 12:10:14 $
+! t/04sighandler.t
+  Resolved RT #15527 (alarm unsupported on Win32)
+  
+1.01  2006/05/02 15:33:22
+! lib/Attribute/*.pm
   Oops.  MARCEL, not MERCEL.
 
 1.00  2006/05/02 14:52:40

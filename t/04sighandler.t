@@ -1,4 +1,11 @@
 #!/usr/bin/perl
+BEGIN {
+    if ( $^O eq 'MSWin32' && $] < 5.007 ) {
+        print "1..0 # Skip: Windows doesn't support alarm()",
+          "with Perl 5.6.x or earlier.\n";
+        exit 0;
+    }
+}
 
 use warnings;
 use strict;
