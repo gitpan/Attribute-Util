@@ -1,12 +1,14 @@
 --- #YAML:1.0
 name:               Attribute-Util
-version:            1.04
+version:            1.05
 abstract:           Assorted general utility attributes
 author:
     - Dan Kogai <dankogai@dan.co.jp>
 license:            unknown
 distribution_type:  module
 configure_requires:
+    ExtUtils::MakeMaker:  0
+build_requires:
     ExtUtils::MakeMaker:  0
 requires:
     Attribute::Handlers:  0.61
@@ -15,7 +17,7 @@ no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.48
+generated_by:       ExtUtils::MakeMaker version 6.50
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4
