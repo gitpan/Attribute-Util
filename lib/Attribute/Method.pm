@@ -5,9 +5,10 @@ use strict;
 use Attribute::Handlers;
 use B::Deparse;
 
-our $VERSION = sprintf "%d.%02d", q$Revision: 1.3 $ =~ /(\d+)/g;
+our $VERSION = sprintf "%d.%02d", q$Revision: 1.4 $ =~ /(\d+)/g;
 
-my $dp        = B::Deparse->new('-l');
+my $dp        = Attribute::Method::_Deparse->new('-l');
+my $dppack;
 my %sigil2ref = (
     '$' => \undef,
     '@' => [],
@@ -27,6 +28,7 @@ sub import {
 
 sub UNIVERSAL::Method : ATTR(RAWDATA) {
     my ( $pkg, $sym, $ref, undef, $args ) = @_;
+    $dppack = $pkg;
     my $src = $dp->coderef2text($ref);
     if ($args) {
         $src =~ s/\{/{\nmy \$self = shift; my ($args) = \@_;\n/;
@@ -37,6 +39,18 @@ sub UNIVERSAL::Method : ATTR(RAWDATA) {
     no warnings 'redefine';
     my $sub_name = *{$sym}{NAME};
     eval qq{ package $pkg; sub $sub_name $src };
+}
+
+package
+ Attribute::Method::_Deparse;
+
+BEGIN { our @ISA = 'B::Deparse' }
+
+sub maybe_qualify {
+    my $ret = SUPER::maybe_qualify{@_};
+    my ($pack,$name) = $ret =~ /(.*)::(.+)/;
+    length $pack && $pack eq $dppack and return $name;
+    $ret;
 }
 
 "Rosebud"; # for MARCEL's sake, not 1 -- dankogai
@@ -119,7 +133,7 @@ C<use> it.  That holds true for most Attribute::* modules.
 
 =head1 AUTHOR
 
-Dan Kogai, E<lt>dankogai@dan.co.jpE<gt>
+Dan Kogai, C<< <dankogai+cpan at gmail.com> >>
 
 =head1 COPYRIGHT
 

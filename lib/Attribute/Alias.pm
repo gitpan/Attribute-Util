@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Attribute::Handlers;
 
-our $VERSION = sprintf "%d.%02d", q$Revision: 1.1 $ =~ /(\d+)/g;
+our $VERSION = sprintf "%d.%02d", q$Revision: 1.2 $ =~ /(\d+)/g;
 
 sub UNIVERSAL::Alias : ATTR {
 	my ($pkg, $symbol, $data) = @_[0,1,4];
@@ -57,7 +57,7 @@ author.
 
 Marcel Grunauer, <marcel@codewerk.com>
 
-Dan Kogai, <dankogai@dan.co.jp>
+Dan Kogai, C<< <dankogai+cpan at gmail.com> >>
 
 =head1 COPYRIGHT
 
